@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
+import StatSection from "../components/StatSection";
 
 const Home = () => {
   return (
@@ -33,9 +34,7 @@ const Home = () => {
       >
         Mulai Belajar Sekarang
       </Button>
-      <section>
-        
-      </section>
+      <StatSection />
     </main>
   );
 };
