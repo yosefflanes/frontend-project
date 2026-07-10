@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
@@ -10,26 +10,67 @@ const Navbar = () => {
           <h2 className="font-bold text-xl">EduPro</h2>
         </Link>
       </div>
-      <div className="flex gap-8">
-        <Link to="/">Home</Link>
-        <Link to="/courses">Courses</Link>
-        <Link to="/dashboard">Dashboard</Link>
+      <div className="hidden gap-8 md:flex">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `h-full flex items-center border-b-2 transition-colors duration-200 ${
+              isActive
+                ? "border-primary text-primary font-semibold" // Style saat menu AKTIF
+                : "border-transparent text-secondary hover:text-primary" // Style saat menu TIDAK AKTIF
+            }`
+          }
+        >
+          Home
+        </NavLink>
+
+        {/* Menu Courses */}
+        <NavLink
+          to="/courses"
+          className={({ isActive }) =>
+            `h-full flex items-center border-b-2 transition-colors duration-200 ${
+              isActive
+                ? "border-primary text-primary font-semibold"
+                : "border-transparent text-secondary hover:text-primary"
+            }`
+          }
+        >
+          Courses
+        </NavLink>
+
+        {/* Menu Dashboard */}
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `h-full flex items-center border-b-2 transition-colors duration-200 ${
+              isActive
+                ? "border-primary text-primary font-semibold"
+                : "border-transparent text-secondary hover:text-primary"
+            }`
+          }
+        >
+          Dashboard
+        </NavLink>
       </div>
       <Stack direction="row" spacing={2}>
         <Button
+          LinkComponent={Link}
+          to="/login"
           variant="text"
           sx={{
             color: "var(--color-secondary)",
             fontSize: "14px",
             fontFamily: '"Poppins", sans-serif',
             "&:hover": {
-                borderRadius: "8px",
-            }
+              borderRadius: "8px",
+            },
           }}
         >
           Login
         </Button>
         <Button
+          LinkComponent={Link}
+          to="/register"
           variant="contained"
           sx={{
             color: "#ffffff",

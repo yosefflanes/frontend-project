@@ -1,3 +1,4 @@
+// import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -5,6 +6,10 @@ function App() {
   return (
     <>
       <Navbar />
+
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes> */}
     </>
   );
 }
