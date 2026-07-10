@@ -1,5 +1,6 @@
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 function App() {
 
@@ -7,9 +8,9 @@ function App() {
     <>
       <Navbar />
 
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
-      </Routes> */}
+      </Routes>
     </>
   );
 }
