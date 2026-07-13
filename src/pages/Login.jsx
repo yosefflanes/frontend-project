@@ -48,12 +48,12 @@ const Login = () => {
 
     setSubmitting(true);
     try {
-      const data = await apiRequest("/login", {
+      const response = await apiRequest("/login", {
         method: "POST",
         body: { email: form.email, password: form.password },
       });
-      login(data.token, data.user);
-      navigate("/dashboard");
+        login(response.data.token, response.data.user);
+        navigate("/dashboard");
     } catch (err) {
       setServerError(err.message || "Login gagal");
     } finally {
@@ -74,7 +74,9 @@ const Login = () => {
             <div className="flex gap-2 items-center">
               {/* PERBAIKAN: Menambahkan pembungkus tag untuk logo & teks agar seimbang */}
               <GiGraduateCap size={22} />
-              <Link to="/" className="text-xl font-bold">EduPro</Link>
+              <Link to="/" className="text-xl font-bold">
+                EduPro
+              </Link>
             </div>
 
             {/* Konten Utama Banner */}
@@ -124,8 +126,7 @@ const Login = () => {
                     Email Address
                   </label>
                   <div>
-                    <div className="flex items-center pointer-events-none text-gray-400">
-                    </div>
+                    <div className="flex items-center pointer-events-none text-gray-400"></div>
                     <input
                       type="email"
                       name="email"
@@ -136,7 +137,9 @@ const Login = () => {
                       className={`w-full pl-2 pr-4 py-2.5 bg-gray-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition-all placeholder-gray-400 ${errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-200 focus:ring-blue-500"}`}
                     />
                     {errors.email && (
-                        <small className="text-red-500 text-sm mt-2">{errors.email}</small>
+                      <small className="text-red-500 text-sm mt-2">
+                        {errors.email}
+                      </small>
                     )}
                   </div>
                 </div>
@@ -149,8 +152,7 @@ const Login = () => {
                     </label>
                   </div>
                   <div>
-                    <div className=" pl-3 flex items-center pointer-events-none text-gray-400">
-                    </div>
+                    <div className=" pl-3 flex items-center pointer-events-none text-gray-400"></div>
                     <input
                       type="password"
                       name="password"
@@ -160,14 +162,15 @@ const Login = () => {
                       className={`w-full pl-2 pr-4 py-2.5 bg-gray-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition-all placeholder-gray-400 ${errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-200 focus:ring-blue-500"}`}
                     />
                     {errors.password && (
-                        <small className="text-red-500 text-sm mt-2">{errors.password}</small>
+                      <small className="text-red-500 text-sm mt-2">
+                        {errors.password}
+                      </small>
                     )}
                     <button
                       type="submit"
                       disabled={submitting ? "Please wait" : "Login"}
                       className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-                    >
-                    </button>
+                    ></button>
                   </div>
                 </div>
 
@@ -184,7 +187,12 @@ const Login = () => {
               {/* Link Registrasi Bawah */}
               <p className="text-center text-xs sm:text-sm text-gray-500 mt-8">
                 New to the platform?{" "}
-                <Link to="/register" className="font-semibold text-indigo-600 hover:text-blue-600 hover:underline">Request an Account</Link>
+                <Link
+                  to="/register"
+                  className="font-semibold text-indigo-600 hover:text-blue-600 hover:underline"
+                >
+                  Request an Account
+                </Link>
               </p>
             </div>
           </div>{" "}
