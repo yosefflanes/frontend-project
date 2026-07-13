@@ -10,7 +10,6 @@ import { useAuth } from "../context/AuthContext";
 import { apiRequest } from "../api/client";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa6";
-import { CiMail, CiLock } from "react-icons/ci";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -124,9 +123,8 @@ const Login = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
                     Email Address
                   </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                      <CiMail size={18} />
+                  <div>
+                    <div className="flex items-center pointer-events-none text-gray-400">
                     </div>
                     <input
                       type="email"
@@ -134,8 +132,8 @@ const Login = () => {
                       value={form.email}
                       onChange={handleChange}
                       required
-                      placeholder="e.g. scholar@university.edu"
-                      className={`w-full pl-10 pr-4 py-2.5 bg-gray-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition-all placeholder-gray-400 ${errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-200 focus:ring-blue-500"}`}
+                      placeholder="example@mail.com"
+                      className={`w-full pl-2 pr-4 py-2.5 bg-gray-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition-all placeholder-gray-400 ${errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-200 focus:ring-blue-500"}`}
                     />
                     {errors.email && (
                         <small className="text-red-500 text-sm mt-2">{errors.email}</small>
@@ -150,18 +148,16 @@ const Login = () => {
                       Password
                     </label>
                   </div>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                      <CiLock size={18} />
+                  <div>
+                    <div className=" pl-3 flex items-center pointer-events-none text-gray-400">
                     </div>
                     <input
                       type="password"
                       name="password"
                       value={form.password}
                       onChange={handleChange}
-                      required
                       placeholder="••••••••"
-                      className={`w-full pl-10 pr-4 py-2.5 bg-gray-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition-all placeholder-gray-400 ${errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-200 focus:ring-blue-500"}`}
+                      className={`w-full pl-2 pr-4 py-2.5 bg-gray-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition-all placeholder-gray-400 ${errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-200 focus:ring-blue-500"}`}
                     />
                     {errors.password && (
                         <small className="text-red-500 text-sm mt-2">{errors.password}</small>
