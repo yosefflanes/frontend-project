@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiRequest } from "../api/client";
 import { Link } from "react-router-dom";
-import FooterSection from "../components/FooterSection";
 
 const User = () => {
   const [users, setUsers] = useState([]);

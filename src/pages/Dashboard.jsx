@@ -1,7 +1,6 @@
 import { GiGraduateCap } from "react-icons/gi";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import FooterSection from "../components/FooterSection";
 
 const Dashboard = () => {
   return (

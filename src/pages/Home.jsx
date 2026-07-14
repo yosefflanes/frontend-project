@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import StatSection from "../components/StatSection";
 import AboutSection from "../components/AboutSection";
 import CallToAction from "../components/CallToAction";
-import FooterSection from "../components/FooterSection";
 
 const Home = () => {
   return (

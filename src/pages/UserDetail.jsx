@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { apiRequest } from "../api/client";
-import FooterSection from "../components/FooterSection";
 
 const UserDetail = () => {
   const { id } = useParams();
@@ -109,7 +108,6 @@ const UserDetail = () => {
           </div>
         </div>
       </div>
-      <FooterSection />
     </>
   );
 };
