@@ -350,11 +350,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-
-      {/* FOOTER HALAMAN BAWAH */}
-      <footer className="w-full bg-slate-100 border-t border-gray-200 px-6 py-4 text-xs text-gray-500 text-center">
-        © 2026 EduPro Learning Management System. All rights reserved.
-      </footer>
     </div>
   );
 };

@@ -116,7 +116,6 @@ const User = () => {
           </div>
         )}
       </div>
-      <FooterSection />
     </>
   );
 };

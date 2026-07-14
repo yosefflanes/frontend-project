@@ -199,27 +199,6 @@ const Login = () => {
           {/* PERBAIKAN: Menyeimbangkan penutup div grid kanan */}
         </div>
       </div>
-
-      {/* FOOTER HALAMAN MINIMALIS */}
-      <footer className="w-full bg-slate-100 border-t border-gray-200/60 px-6 py-4 text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <div>
-          © 2026 EduPro Learning Management System. All rights reserved.
-        </div>
-        <div className="flex gap-4 font-medium">
-          <a href="#privacy" className="hover:text-gray-800 transition-colors">
-            Privacy Policy
-          </a>
-          <a href="#terms" className="hover:text-gray-800 transition-colors">
-            Terms of Service
-          </a>
-          <a
-            href="#integrity"
-            className="hover:text-gray-800 transition-colors"
-          >
-            Academic Integrity
-          </a>
-        </div>
-      </footer>
     </div>
   );
 };

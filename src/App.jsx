@@ -8,6 +8,7 @@ import Users from "./pages/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UserDetail from "./pages/UserDetail";
 import { useAuth } from "./context/AuthContext";
+import FooterSection from "./components/FooterSection";
 
 function App() {
   const { loading } = useAuth();
@@ -59,6 +60,7 @@ function App() {
           }
         />
       </Routes>
+      <FooterSection />
     </>
   );
 }
