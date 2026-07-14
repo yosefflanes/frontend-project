@@ -6,13 +6,15 @@ import { apiRequest } from "../api/client";
 import { Typography } from "@mui/material";
 
 const Navbar = () => {
-  const { user, isLoggedIn, isInstructor, logout } = useAuth();
+  const { user, isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await apiRequest("/logout", { method: "POST" });
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
     logout();
     navigate("/login");
   };
@@ -77,7 +79,7 @@ const Navbar = () => {
           sx={{
             display: "flex",
             flexDirection: "row",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <Typography

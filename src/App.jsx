@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
+import UserDetail from "./pages/UserDetail";
 
 function App() {
 
@@ -33,6 +34,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Users />
+            </ProtectedRoute>
+          } />
+
+          <Route 
+          path="/users/:id" 
+          element={
+            <ProtectedRoute>
+              <UserDetail />
             </ProtectedRoute>
           } />
       </Routes>

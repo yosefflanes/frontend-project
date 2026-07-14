@@ -17,20 +17,20 @@ const User = () => {
 
   return (
     <>
-      <div className="border border-gray-400 p-10 flex flex-col">
-        <div className="mb-4">
+      <div className="border border-gray-400 p-2 flex flex-col">
+        <div className="py-10 text-center">
           <h1 className="font-bold text-2xl text-primary">User Management</h1>
-          <p className="text-sm text-secondary">Manage and view all users</p>
+          <p className="text-sm text-secondary">You can only view all users and user details</p>
         </div>
 
         {loading && <p>Memuat data user...</p>}
         {error && <p className="text-red-600 text-sm">{error}</p>}
 
         {!loading && !error && (
-          <table className="text-primary text-center border">
+          <table className="text-primary text-center border border-gray-300">
             <thead className="bg-background">
               <tr>
-                <th className="py-4 px-6">ID</th>
+                <th className="py-4 md:px-6">ID</th>
                 <th>NAMA</th>
                 <th>EMAIL</th>
                 <th>ROLE</th>
@@ -41,7 +41,7 @@ const User = () => {
               {users.map((u) => (
                 <tr
                   key={u.id}
-                  className="transition-colors duration-150 odd:bg-white even:bg-[#8fa4c7]/20"
+                  className="transition-colors duration-150 odd:bg-white even:bg-blue-400/20"
                 >
                   <td className="py-4 px-6">{u.id}</td>
                   <td>{u.name}</td>
