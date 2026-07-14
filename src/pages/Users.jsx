@@ -16,43 +16,53 @@ const User = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        <h1 className="font-bold text-2xl text-primary">User Management</h1>
-        <p className="text-sm text-secondary">Manage and view all users</p>
-      </div>
+    <>
+      <div className="border border-gray-400 p-10 flex flex-col">
+        <div className="mb-4">
+          <h1 className="font-bold text-2xl text-primary">User Management</h1>
+          <p className="text-sm text-secondary">Manage and view all users</p>
+        </div>
 
-      {loading && <p>Memuat data user...</p>}
-      {error && <p className="text-red-600 text-sm">{error}</p>}
+        {loading && <p>Memuat data user...</p>}
+        {error && <p className="text-red-600 text-sm">{error}</p>}
 
-      {!loading && !error && (
-        <table className="text-secondary">
-          <thead className="bg-background">
-            <tr>
-              <th>ID</th>
-              <th>NAMA</th>
-              <th>EMAIL</th>
-              <th>ROLE</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((u) => (
-              <tr key={u.id}>
-                <td>{u.id}</td>
-                <td>{u.nema}</td>
-                <td>{u.email}</td>
-                <td>{u.role}</td>
-                <td>
-                  <Link to={`/users/${u.id}`}>User Detail</Link>
-                </td>
+        {!loading && !error && (
+          <table className="text-primary text-center border">
+            <thead className="bg-background">
+              <tr>
+                <th className="py-4 px-6">ID</th>
+                <th>NAMA</th>
+                <th>EMAIL</th>
+                <th>ROLE</th>
+                <th>ACTIONS</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {users.map((u) => (
+                <tr
+                  key={u.id}
+                  className="transition-colors duration-150 odd:bg-white even:bg-[#8fa4c7]/20"
+                >
+                  <td className="py-4 px-6">{u.id}</td>
+                  <td>{u.name}</td>
+                  <td>{u.email}</td>
+                  <td>{u.role}</td>
+                  <td>
+                    <Link
+                      to={`/users/${u.id}`}
+                      className="hover:text-indigo-600"
+                    >
+                      User Detail
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
       <FooterSection />
-    </div>
+    </>
   );
 };
 
