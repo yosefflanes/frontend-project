@@ -1,8 +1,23 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { useAuth } from "../context/AuthContext";
+import { apiRequest } from "../api/client";
 
 const Navbar = () => {
+  const {user, isLoggedIn, isInstructor, logout} = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await apiRequest("/logout", {method: "POST"});
+    } catch (err) {
+      
+    }
+    logout();
+    navigate("/login");
+  };
+
   return (
     <nav className="w-full h-16 px-10 flex items-center justify-between text-primary">
       <div>
@@ -82,6 +97,19 @@ const Navbar = () => {
         >
           Register
         </Button>
+        {/* {isLoggedIn ? (
+          <>
+            <span className="greeting">Halo, {user?.name}!</span>
+            <button onClick={handleLogout} className="btn-logout">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Daftar</Link>
+          </>
+        )} */}
       </Stack>
     </nav>
   );
