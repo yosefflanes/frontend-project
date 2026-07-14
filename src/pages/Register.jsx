@@ -10,7 +10,7 @@
 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 import { apiRequest } from "../api/client";
 import { MdEmail, MdLock } from "react-icons/md";
 import { GiGraduateCap } from "react-icons/gi";

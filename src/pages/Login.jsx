@@ -6,7 +6,7 @@
 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 import { apiRequest } from "../api/client";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa6";
