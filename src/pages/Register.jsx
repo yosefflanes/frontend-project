@@ -29,10 +29,9 @@ const Register = () => {
     role: "student",
   });
 
-  const [errors, setErrors] = useState({});
+  const [validationErrorsState, setValidationErrorsState] = useState({});
   const [serverError, setServerError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [role, setRole] = useState("student");
 
   const handleChange = (e) => {
     setForm({
@@ -68,37 +67,63 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setServerError("");
+    setServerError(""); // Bersihkan error server lama
+    setValidationErrorsState({}); // Bersihkan error validasi lama
 
-    const validationErrors = validate();
-    setErrors(validationErrors);
-    if (Object.keys(validationErrors).length > 0) return;
+    const checkErrors = validate();
+
+    // Jika ada error validasi di frontend, set state dan hentikan submit
+    if (Object.keys(checkErrors).length > 0) {
+      setValidationErrorsState(checkErrors);
+      return;
+    }
 
     setSubmitting(true);
     try {
-      const data = await apiRequest("/register", {
+      const response = await apiRequest("/register", {
         method: "POST",
         body: {
           name: form.name,
           email: form.email,
           password: form.password,
           password_confirmation: form.confirmPassword,
+          role: form.role,
         },
       });
-      login(data.token, data.user);
-      navigate("/dashboard");
-    } catch (err) {
-      if (err.data?.errors) {
-        const laravelErrors = {};
-        Object.keys(err.data.errors).forEach((key) => {
-          laravelErrors[key] = err.data.errors[key][0];
+      
+      // Sesuai dengan controller Laravel Anda: response.data.token & response.data.user
+      const token = response?.data?.token;
+      const user = response?.data?.user;
+      
+      if (token && user) {
+        // Simpan ke AuthContext dan arahkan ke dashboard
+        login(token, user);
+        navigate("/dashboard");
+      } else {
+        console.error("Struktur JSON salah:", response);
+        throw new Error("Respon data registrasi tidak lengkap dari server.");
+      }
+    } catch (apiError) {
+      console.error("Gagal melakukan registrasi:", apiError);
+
+      const errorMsg =
+        apiError.data?.message ||
+        apiError.message ||
+        "Registrasi gagal. Silakan coba beberapa saat lagi.";
+      setServerError(errorMsg);
+
+      if (apiError.data && apiError.data.errors) {
+        const laravelValidationFields = {};
+        Object.keys(apiError.data.errors).forEach((key) => {
+          laravelValidationFields[key] = apiError.data.errors[key][0];
         });
-        setErrors(laravelErrors);
+        setValidationErrorsState(laravelValidationFields);
       }
     } finally {
       setSubmitting(false);
     }
   };
+
   return (
     <div className="min-h-screen bg-[#f8fafc] flex flex-col justify-between font-sans">
       {/* CONTAINER UTAMA (Card Tengah) */}
@@ -187,12 +212,12 @@ const Register = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${errors.name ? "border-red-500" : ""}`}
+                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${validationErrorsState.name ? "border-red-500" : ""}`}
                     />
                   </div>
-                  {errors.name && (
+                  {validationErrorsState.name && (
                     <small className="text-red-500 text-sm mt-2">
-                      {errors.name}
+                      {validationErrorsState.name}
                     </small>
                   )}
                 </div>
@@ -210,12 +235,12 @@ const Register = () => {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="example@mail.com"
-                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${errors.email ? "border-red-500" : ""}`}
+                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${validationErrorsState.email ? "border-red-500" : ""}`}
                     />
                   </div>
-                  {errors.email && (
+                  {validationErrorsState.email && (
                     <small className="text-red-500 text-sm mt-2">
-                      {errors.email}
+                      {validationErrorsState.email}
                     </small>
                   )}
                 </div>
@@ -233,12 +258,12 @@ const Register = () => {
                       value={form.password}
                       onChange={handleChange}
                       placeholder="••••••••"
-                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${errors.password ? "border-red-500" : ""}`}
+                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${validationErrorsState.password ? "border-red-500" : ""}`}
                     />
                   </div>
-                  {errors.password && (
+                  {validationErrorsState.password && (
                     <small className="text-red-500 text-sm mt-2">
-                      {errors.password}
+                      {validationErrorsState.password}
                     </small>
                   )}
                 </div>
@@ -256,12 +281,12 @@ const Register = () => {
                       value={form.confirmPassword}
                       onChange={handleChange}
                       placeholder="••••••••"
-                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${errors.confirmPassword ? "border-red-500" : ""}`}
+                      className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${validationErrorsState.confirmPassword ? "border-red-500" : ""}`}
                     />
                   </div>
-                  {errors.confirmPassword && (
+                  {validationErrorsState.confirmPassword && (
                     <small className="text-red-500 text-sm mt-2">
-                      {errors.confirmPassword}
+                      {validationErrorsState.confirmPassword}
                     </small>
                   )}
                 </div>
@@ -274,9 +299,9 @@ const Register = () => {
                   <div className="grid grid-cols-2 gap-4">
                     {/* Opsi Student */}
                     <div
-                      onClick={() => setRole("student")}
+                      onClick={() => setForm({ ...form, role: "student" })}
                       className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl cursor-pointer transition-all ${
-                        role === "student"
+                        form.role === "student"
                           ? "border-2 border-indigo-600 bg-indigo-50/50 text-indigo-600"
                           : "border border-gray-200 bg-[#f8fafc] text-gray-600 hover:bg-gray-50"
                       }`}
@@ -287,9 +312,9 @@ const Register = () => {
 
                     {/* Opsi Instructor */}
                     <div
-                      onClick={() => setRole("instructor")}
+                      onClick={() => setForm({ ...form, role: "instructor" })}
                       className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl cursor-pointer transition-all ${
-                        role === "instructor"
+                        form.role === "instructor"
                           ? "border-2 border-indigo-600 bg-indigo-50/50 text-indigo-600"
                           : "border border-gray-200 bg-[#f8fafc] text-gray-600 hover:bg-gray-50"
                       }`}

@@ -57,7 +57,7 @@ const Navbar = () => {
         )}
 
         {/* Menu Users */}
-        {user && (
+        {isLoggedIn && (
           <NavLink
             to="/users"
             className={({ isActive }) =>

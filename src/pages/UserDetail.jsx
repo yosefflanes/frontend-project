@@ -34,7 +34,7 @@ const UserDetail = () => {
 
   return (
     <>
-      <div className="w-full max-w-2xl mx-auto p-4 md:p-8 mb-2">
+      <div className="w-full max-w-2xl mx-auto p-4 md:p-8 mt-10 mb-11">
         {/* Tombol Kembali / Navigasi Atas */}
         <div className="mb-6">
           <Link
@@ -57,9 +57,9 @@ const UserDetail = () => {
             </p>
           </div>
 
-          {/* Card Body - Daftar Informasi */}
+          {/* Daftar Informasi */}
           <div className="divide-y divide-gray-100 px-6">
-            {/* BARIS 1: USER ID */}
+            {/* USER ID */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
                 User ID
@@ -69,7 +69,7 @@ const UserDetail = () => {
               </span>
             </div>
 
-            {/* BARIS 2: FULL NAME */}
+            {/* FULL NAME */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
                 Full Name
@@ -79,7 +79,7 @@ const UserDetail = () => {
               </span>
             </div>
 
-            {/* BARIS 3: EMAIL ADDRESS */}
+            {/* EMAIL ADDRESS */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
                 Email Address
@@ -89,7 +89,7 @@ const UserDetail = () => {
               </span>
             </div>
 
-            {/* BARIS 4: ROLE */}
+            {/* ROLE */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
                 Role
@@ -103,19 +103,6 @@ const UserDetail = () => {
                   }`}
                 >
                   {user?.role}
-                </span>
-              </div>
-            </div>
-
-            {/* BARIS 5: STATUS */}
-            <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-              <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
-                Status
-              </span>
-              <div className="sm:w-2/3 sm:text-right">
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-green-600 bg-green-50/60 border border-green-100 px-2.5 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                  Active
                 </span>
               </div>
             </div>

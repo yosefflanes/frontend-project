@@ -6,7 +6,7 @@ import FooterSection from "../components/FooterSection";
 const Dashboard = () => {
   return (
     <div className="border border-t-neutral-400">
-      <div className="text-center max-w-3xl mx-auto mt-10">
+      <div className="text-center max-w-3xl mx-auto mt-10 mb-13">
         <h1 className="text-primary text-3xl font-bold">Dashboard</h1>
         <p className="text-secondary text-sm">
           Welcome back to your central learning hub. Manage your progress,
