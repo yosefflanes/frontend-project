@@ -29,7 +29,7 @@ const Dashboard = () => {
         <div className="mx-auto">
           <Button
             LinkComponent={Link}
-            to="/courses"
+            to="/users"
             variant="contained"
             sx={{
               color: "#ffffff",
@@ -39,7 +39,7 @@ const Dashboard = () => {
               backgroundColor: "var(--color-primary)",
             }}
           >
-            View Courses
+            View Users
           </Button>
         </div>
       </div>
