@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiRequest } from "../api/client";
 import { Link } from "react-router-dom";
+import PaginationControls from "../components/molecules/PaginationControls";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -46,10 +47,10 @@ const User = () => {
     <>
       <div className="border border-gray-400 p-2 flex flex-col mt-10">
         <div className="py-10 text-center">
-          <h1 className="font-bold text-2xl text-primary">Manajemen Pengguna</h1>
-          <p className="text-sm text-secondary">
-            Kelola Data Pengguna
-          </p>
+          <h1 className="font-bold text-2xl text-primary">
+            Manajemen Pengguna
+          </h1>
+          <p className="text-sm text-secondary">Kelola Data Pengguna</p>
         </div>
 
         {loading && <p>Memuat data user...</p>}
@@ -89,30 +90,15 @@ const User = () => {
             </tbody>
           </table>
         )}
-        {totalPages > 1 && (
-          <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-100">
-            <button
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-              disabled={currentPage === 1}
-              className="px-4 py-2 text-xs font-semibold bg-gray-100 text-gray-700 rounded-lg disabled:opacity-40 hover:bg-gray-200 transition-all cursor-pointer disabled:cursor-not-allowed"
-            >
-              ← Sebelumnya
-            </button>
-
-            <span className="text-xs text-secondary font-medium">
-              Halaman {currentPage} / {totalPages}
-            </span>
-
-            <button
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-              }
-              disabled={currentPage === totalPages}
-              className="px-4 py-2 text-xs font-semibold bg-[#0f2547] text-white rounded-lg disabled:opacity-40 hover:bg-slate-800 transition-all cursor-pointer disabled:cursor-not-allowed"
-            >
-              Selanjutnya →
-            </button>
-          </div>
+        {users.length > 0 && (
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPrev={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            onNext={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+          />
         )}
       </div>
     </>
