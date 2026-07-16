@@ -33,7 +33,7 @@ export async function apiRequest(path, { method = "GET", body } ={}){
         });
         return res.data;
     } catch (err) {
-        const data = error.response?.data ?? null;
+        const data = err.response?.data ?? null;
         const error = new Error(data?.message || "Terjadi kesalahan");
         error.status = err.response?.status;
         error.data = data;

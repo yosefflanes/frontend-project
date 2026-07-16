@@ -90,11 +90,11 @@ const Register = () => {
           role: form.role,
         },
       });
-      
+
       // Sesuai dengan controller Laravel Anda: response.data.token & response.data.user
       const token = response?.data?.token;
       const user = response?.data?.user;
-      
+
       if (token && user) {
         // Simpan ke AuthContext dan arahkan ke dashboard
         login(token, user);
@@ -133,11 +133,12 @@ const Register = () => {
           <div className="bg-[#0f2547] text-white p-8 md:p-12 flex flex-col gap-8 justify-center">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-                Start Your Academic Excellence Journey
+                Mulai Perjalanan Akademik Terbaikmu
               </h1>
               <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                Join thousands of students and instructors in a world-class
-                learning management environment built for focus and precision.
+                Bergabunglah dengan ribuan siswa dan pengajar dalam lingkungan
+                manajemen pembelajaran kelas dunia yang dirancang khusus untuk
+                fokus dan presisi.
               </p>
             </div>
 
@@ -150,10 +151,10 @@ const Register = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-sm md:text-base">
-                    Accredited Content
+                    Konten Terakreditasi
                   </h3>
                   <p className="text-xs text-gray-400">
-                    Expert-vetted curriculum across all disciplines.
+                    Kurikulum standar ahli yang mencakup seluruh disiplin ilmu.
                   </p>
                 </div>
               </div>
@@ -165,10 +166,11 @@ const Register = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-sm md:text-base">
-                    Seamless Performance
+                    Performa Tanpa Hambatan
                   </h3>
                   <p className="text-xs text-gray-400">
-                    Zero-latency dashboard and media streaming.
+                    Dashboard berkecepatan tinggi dengan akses streaming media
+                    bebas jeda.
                   </p>
                 </div>
               </div>
@@ -181,10 +183,10 @@ const Register = () => {
               {/* Header Form */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0f2547] mb-2">
-                  Create Account
+                  Buat akun
                 </h2>
                 <p className="text-sm text-gray-500">
-                  Please fill in your details to get started.
+                  Yuk, daftar dan lengkapi data dibawah ini.
                 </p>
               </div>
 
@@ -202,7 +204,7 @@ const Register = () => {
                 {/* Full Name Field */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-gray-700">
-                    Full Name
+                    Nama Lengkap
                   </label>
                   <div className="flex items-center gap-3 px-4 py-3 bg-[#f0f4f9] border border-transparent rounded-xl focus-within:border-blue-500 focus-within:bg-white transition-all">
                     <FaUser className="text-gray-400 w-4 h-4 shrink-0" />
@@ -225,7 +227,7 @@ const Register = () => {
                 {/* Email Field */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-gray-700">
-                    Email Address
+                    Email
                   </label>
                   <div className="flex items-center gap-3 px-4 py-3 bg-[#f0f4f9] border border-transparent rounded-xl focus-within:border-blue-500 focus-within:bg-white transition-all">
                     <MdEmail className="text-gray-400 w-4 h-4 shrink-0" />
@@ -248,7 +250,7 @@ const Register = () => {
                 {/* Password Field */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-gray-700">
-                    Password
+                    Kata Sandi
                   </label>
                   <div className="flex items-center gap-3 px-4 py-3 bg-[#f0f4f9] border border-transparent rounded-xl focus-within:border-blue-500 focus-within:bg-white transition-all">
                     <MdLock className="text-gray-400 w-4 h-4 shrink-0" />
@@ -271,7 +273,7 @@ const Register = () => {
                 {/* Password Confirmation Field */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-gray-700">
-                    Password Confirmation
+                    Konfirmasi Kata Sandi
                   </label>
                   <div className="flex items-center gap-3 px-4 py-3 bg-[#f0f4f9] border border-transparent rounded-xl focus-within:border-blue-500 focus-within:bg-white transition-all">
                     <MdLock className="text-gray-400 w-4 h-4 shrink-0" />
@@ -294,7 +296,7 @@ const Register = () => {
                 {/* Role Selection Field */}
                 <div className="flex flex-col gap-2.5">
                   <label className="text-sm font-medium text-gray-700">
-                    I am joining as a:
+                    Saya bergabung sebagai :
                   </label>
                   <div className="grid grid-cols-2 gap-4">
                     {/* Opsi Student */}
@@ -307,7 +309,7 @@ const Register = () => {
                       }`}
                     >
                       <GiGraduateCap className="w-6 h-6" />
-                      <span className="text-sm font-semibold">Student</span>
+                      <span className="text-sm font-semibold">Siswa</span>
                     </div>
 
                     {/* Opsi Instructor */}
@@ -320,7 +322,7 @@ const Register = () => {
                       }`}
                     >
                       <HiOutlineAcademicCap className="w-6 h-6" />
-                      <span className="text-sm font-semibold">Instructor</span>
+                      <span className="text-sm font-semibold">Instruktur</span>
                     </div>
                   </div>
                 </div>
@@ -331,18 +333,18 @@ const Register = () => {
                   disabled={submitting}
                   className="w-full bg-[#0f2547] text-white py-3 px-4 rounded-xl font-semibold text-sm flex items-center justify-center hover:bg-slate-800 transition-all shadow-md mt-2 hover:cursor-pointer"
                 >
-                  {submitting ? "Please wait" : "Register Account"}
+                  {submitting ? "Tunggu ya.." : "Daftar akun"}
                 </button>
               </form>
 
               {/* Footer Pindah ke Login */}
               <p className="text-center text-sm text-gray-500">
-                Already have an account?{" "}
+                Sudah punya akun?{" "}
                 <Link
                   to="/login"
                   className="font-semibold text-blue-600 hover:underline"
                 >
-                  Login
+                  Masuk
                 </Link>
               </p>
             </div>

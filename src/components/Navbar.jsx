@@ -73,7 +73,7 @@ const Navbar = () => {
               }`
             }
           >
-            Users
+            Daftar Pengguna
           </NavLink>
         )}
       </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
               },
             }}
           >
-            Login
+            Masuk
           </Button>
           <Button
             LinkComponent={Link}
@@ -143,7 +143,7 @@ const Navbar = () => {
               backgroundColor: "var(--color-primary)",
             }}
           >
-            Register
+            Daftar
           </Button>
         </Stack>
       )}
