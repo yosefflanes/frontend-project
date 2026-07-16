@@ -2,17 +2,20 @@
 @import 'tailwindcss';
 
 @theme {
+    --color-background: #F8FAFC;
+    
     --color-primary: #002045;
-    --color-secondary: #43474E;
-    --color-subtitle: #86A0CD;
-    --color-accent-purple: #4d49e7;
-    --color-accent-btn: #2d3748;
-    --color-background: #86A0CD;
+    --color-secondary: #1E293B;        
+    --color-subtitle: #64748B;         
+    
+    --color-accent-purple: #4D49E7;
+    --color-accent-btn: #0284C7;
 }
+
 
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: var(--color-background);
 }
