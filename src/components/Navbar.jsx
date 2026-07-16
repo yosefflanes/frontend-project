@@ -25,7 +25,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="w-full h-16 px-10 shadow-md z-50 bg-white fixed top-0 backdrop:blur-md flex items-center justify-between text-cyan-400">
+    <nav className="w-full h-16 px-10 shadow-md z-50 bg-white fixed top-0 backdrop:blur-md flex items-center justify-between">
       <div>
         <Link to="/">
           <h2 className="font-bold text-xl">EduPro</h2>
@@ -58,6 +58,22 @@ const Navbar = () => {
             }
           >
             Dashboard
+          </NavLink>
+        )}
+
+        {/* Menu Kursus */}
+        {isLoggedIn && (
+          <NavLink
+            to="/courses"
+            className={({ isActive }) =>
+              `h-full flex items-center border-b-2 transition-colors duration-200 ${
+                isActive
+                  ? "border-primary text-black font-semibold"
+                  : "border-transparent text-black hover:text-primary"
+              }`
+            }
+          >
+            Kursus
           </NavLink>
         )}
 

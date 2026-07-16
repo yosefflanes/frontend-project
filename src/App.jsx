@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import UserDetail from "./pages/UserDetail";
 import { useAuth } from "./context/AuthContext";
 import FooterSection from "./components/FooterSection";
+import Course from "./pages/Courses";
 
 function App() {
   const { loading } = useAuth();
@@ -38,6 +39,24 @@ function App() {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/courses"
+          element={
+            <ProtectedRoute>
+              <Course />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/courses/:id"
+          element={
+            <ProtectedRoute>
+              <Course />
             </ProtectedRoute>
           }
         />
