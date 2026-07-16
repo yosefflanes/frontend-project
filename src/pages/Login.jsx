@@ -9,7 +9,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { apiRequest } from "../api/client";
 import { GiGraduateCap } from "react-icons/gi";
-import { FaArrowRight } from "react-icons/fa6";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -52,8 +51,8 @@ const Login = () => {
         method: "POST",
         body: { email: form.email, password: form.password },
       });
-        login(response.data.token, response.data.user);
-        navigate("/dashboard");
+      login(response.data.token, response.data.user);
+      navigate("/dashboard");
     } catch (err) {
       setServerError(err.message || "Login gagal");
     } finally {
@@ -166,11 +165,6 @@ const Login = () => {
                         {errors.password}
                       </small>
                     )}
-                    <button
-                      type="submit"
-                      disabled={submitting ? "Please wait" : "Login"}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-                    ></button>
                   </div>
                 </div>
 
@@ -179,8 +173,7 @@ const Login = () => {
                   type="submit"
                   className="w-full bg-[#1A365D] text-white py-3 px-4 rounded-xl font-medium text-sm flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-[0.99] transition-all shadow-md shadow-blue-900/10 mt-2 hover:cursor-pointer"
                 >
-                  Sign In to EduPro
-                  <FaArrowRight size={16} />
+                  {submitting ? "Please wait" : "Login"}
                 </button>
               </form>
 

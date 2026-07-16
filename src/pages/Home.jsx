@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 
 const Home = () => {
   return (
-    <main className="w-full flex flex-col gap-6 mt-8 mb-10">
+    <main className="w-full flex flex-col gap-6 mt-18 mb-10">
       <section id="hero-section">
         <h1 className="font-bold text-3xl text-accent-purple text-center">
           <span className="block text-primary">Masa Depan Pembelajaran</span>{" "}

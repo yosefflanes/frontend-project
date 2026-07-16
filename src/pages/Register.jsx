@@ -125,9 +125,9 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] flex flex-col justify-between font-sans">
+    <div className="bg-[#f8fafc] flex flex-col justify-between font-sans shadow-2xl">
       {/* CONTAINER UTAMA (Card Tengah) */}
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 md:p-8">
+      <div className="flex items-center justify-center p-4 sm:p-6 md:p-8">
         <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
           {/* SISI KIRI: BANNER BIRU TUA */}
           <div className="bg-[#0f2547] text-white p-8 md:p-12 flex flex-col gap-8 justify-center">
@@ -176,7 +176,7 @@ const Register = () => {
           </div>
 
           {/* SISI KANAN: FORM REGISTER */}
-          <div className="p-8 md:p-12 flex flex-col justify-center bg-white">
+          <div className="p-8 md:p-8 flex flex-col justify-center bg-white">
             <div className="max-w-md w-full mx-auto flex flex-col gap-6">
               {/* Header Form */}
               <div>
@@ -331,7 +331,6 @@ const Register = () => {
                   disabled={submitting}
                   className="w-full bg-[#0f2547] text-white py-3 px-4 rounded-xl font-semibold text-sm flex items-center justify-center hover:bg-slate-800 transition-all shadow-md mt-2 hover:cursor-pointer"
                 >
-                  {" "}
                   {submitting ? "Please wait" : "Register Account"}
                 </button>
               </form>
