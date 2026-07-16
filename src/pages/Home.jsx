@@ -1,9 +1,10 @@
-import Button from "@mui/material/Button";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
 import StatSection from "../components/StatSection";
 import AboutSection from "../components/AboutSection";
 import CallToAction from "../components/CallToAction";
+import {Button} from '@mui/material'
+import Stack from '@mui/material/Stack';
+
 
 const Home = () => {
   return (
@@ -21,12 +22,11 @@ const Home = () => {
           perkembangan teknologi, data, dan hasil pembelajaran yang nyata.
         </p>
       </div>
-      <div className="mx-auto">
+      <Stack className="mx-auto">
         <Button
         LinkComponent={Link}
         to="/login"
         variant="contained"
-        endIcon={<ArrowForwardIcon />}
         sx={{
           color: "#ffffff",
           fontSize: "14px",
@@ -37,7 +37,7 @@ const Home = () => {
       >
         Mulai Belajar Sekarang
       </Button>
-      </div>
+      </Stack>
       <StatSection />
       <AboutSection />
       <CallToAction />

@@ -1,6 +1,7 @@
 import { GiGraduateCap } from "react-icons/gi";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { Stack } from "@mui/material";
 
 const Dashboard = () => {
   return (
@@ -26,7 +27,7 @@ const Dashboard = () => {
             notifications or urgent tasks. Start by exploring the course catalog
             or resume where you left off.
           </p>
-          <div className="mx-auto">
+          <Stack className="mx-auto">
             <Button
               LinkComponent={Link}
               to="/users"
@@ -41,7 +42,7 @@ const Dashboard = () => {
             >
               View Users
             </Button>
-          </div>
+          </Stack>
         </div>
       </div>
     </>

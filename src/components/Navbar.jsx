@@ -1,4 +1,4 @@
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { useAuth } from "../hooks/useAuth";
@@ -8,6 +8,7 @@ import { Typography } from "@mui/material";
 const Navbar = () => {
   const { user, isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = async () => {
     try {
@@ -19,8 +20,12 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  if(location.pathname === "/login" || location.pathname === "/register") {
+    return null;
+  }
+
   return (
-    <nav className="w-full h-16 px-10 flex items-center justify-between text-primary">
+    <nav className="w-full h-16 px-10 shadow-md z-50 bg-white fixed top-0 backdrop:blur-md flex items-center justify-between text-cyan-400">
       <div>
         <Link to="/">
           <h2 className="font-bold text-xl">EduPro</h2>
@@ -33,7 +38,7 @@ const Navbar = () => {
             `h-full flex items-center border-b-2 transition-colors duration-200 ${
               isActive
                 ? "border-primary text-primary font-semibold" // Style saat menu AKTIF
-                : "border-transparent text-secondary hover:text-primary" // Style saat menu TIDAK AKTIF
+                : "border-transparent text-black hover:text-primary" // Style saat menu TIDAK AKTIF
             }`
           }
         >
@@ -47,8 +52,8 @@ const Navbar = () => {
             className={({ isActive }) =>
               `h-full flex items-center border-b-2 transition-colors duration-200 ${
                 isActive
-                  ? "border-primary text-primary font-semibold"
-                  : "border-transparent text-secondary hover:text-primary"
+                  ? "border-primary text-black font-semibold"
+                  : "border-transparent text-black hover:text-primary"
               }`
             }
           >
@@ -63,8 +68,8 @@ const Navbar = () => {
             className={({ isActive }) =>
               `h-full flex items-center border-b-2 transition-colors duration-200 ${
                 isActive
-                  ? "border-primary text-primary font-semibold"
-                  : "border-transparent text-secondary hover:text-primary"
+                  ? "border-primary text-black font-semibold"
+                  : "border-transparent text-black hover:text-primary"
               }`
             }
           >
@@ -115,8 +120,9 @@ const Navbar = () => {
             to="/login"
             variant="text"
             sx={{
-              color: "var(--color-secondary)",
+              color: "black",
               fontSize: "14px",
+              textDecoration:"none",
               fontFamily: '"Poppins", sans-serif',
               "&:hover": {
                 borderRadius: "8px",

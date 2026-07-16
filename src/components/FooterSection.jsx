@@ -1,8 +1,15 @@
 import { FaGlobeAsia } from "react-icons/fa";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { AiOutlineSound } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const FooterSection = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/login" || location.pathname === "/register") {
+    return null;
+  }
+
   return (
     <footer className="w-full bg-[#CBDBF5] py-8 px-4 md:py-12 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-9 gap-4">
