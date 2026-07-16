@@ -33,14 +33,14 @@ const UserDetail = () => {
 
   return (
     <>
-      <div className="w-full max-w-2xl mx-auto p-4 md:p-8 mt-10">
+      <div className="w-full max-w-2xl mx-auto p-4 md:p-8 mt-14">
         {/* Tombol Kembali / Navigasi Atas */}
         <div className="mb-6">
           <Link
             to="/users"
             className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
           >
-            ← Kembali ke User Management
+            ← Kembali ke Manajemen Pengguna
           </Link>
         </div>
 
@@ -49,7 +49,7 @@ const UserDetail = () => {
           {/* Card Header */}
           <div className="p-6 border-b border-gray-100 bg-gray-50/50">
             <h2 className="text-xl font-bold text-primary tracking-tight">
-              User Information
+              Informasi Pengguna
             </h2>
             <p className="text-xs text-secondary mt-0.5">
               Detail data dan profil pengguna pada platform EduPro
@@ -61,7 +61,7 @@ const UserDetail = () => {
             {/* USER ID */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
-                User ID
+                ID Pengguna
               </span>
               <span className="text-sm font-mono font-bold text-primary sm:w-2/3 sm:text-right">
                 {user?.id || id}
@@ -71,7 +71,7 @@ const UserDetail = () => {
             {/* FULL NAME */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
-                Full Name
+                Nama Lengkap
               </span>
               <span className="text-sm font-semibold text-primary sm:w-2/3 sm:text-right">
                 {user?.name}
@@ -81,7 +81,7 @@ const UserDetail = () => {
             {/* EMAIL ADDRESS */}
             <div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
               <span className="text-xs font-bold tracking-wider text-secondary uppercase sm:w-1/3">
-                Email Address
+                Alamat Email
               </span>
               <span className="text-sm text-secondary break-all sm:w-2/3 sm:text-right">
                 {user?.email}

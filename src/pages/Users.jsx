@@ -44,11 +44,11 @@ const User = () => {
 
   return (
     <>
-      <div className="border border-gray-400 p-2 flex flex-col">
+      <div className="border border-gray-400 p-2 flex flex-col mt-10">
         <div className="py-10 text-center">
-          <h1 className="font-bold text-2xl text-primary">User Management</h1>
+          <h1 className="font-bold text-2xl text-primary">Manajemen Pengguna</h1>
           <p className="text-sm text-secondary">
-            You can only view all users and user details
+            Kelola Data Pengguna
           </p>
         </div>
 
@@ -63,7 +63,7 @@ const User = () => {
                 <th>NAMA</th>
                 <th>EMAIL</th>
                 <th>ROLE</th>
-                <th>ACTIONS</th>
+                <th>AKSI</th>
               </tr>
             </thead>
             <tbody>
@@ -81,7 +81,7 @@ const User = () => {
                       to={`/users/${u.id}`}
                       className="hover:text-indigo-600"
                     >
-                      User Detail
+                      Detail Pengguna
                     </Link>
                   </td>
                 </tr>
@@ -96,11 +96,11 @@ const User = () => {
               disabled={currentPage === 1}
               className="px-4 py-2 text-xs font-semibold bg-gray-100 text-gray-700 rounded-lg disabled:opacity-40 hover:bg-gray-200 transition-all cursor-pointer disabled:cursor-not-allowed"
             >
-              ← Previous
+              ← Sebelumnya
             </button>
 
             <span className="text-xs text-secondary font-medium">
-              Page {currentPage} of {totalPages}
+              Halaman {currentPage} / {totalPages}
             </span>
 
             <button
@@ -110,7 +110,7 @@ const User = () => {
               disabled={currentPage === totalPages}
               className="px-4 py-2 text-xs font-semibold bg-[#0f2547] text-white rounded-lg disabled:opacity-40 hover:bg-slate-800 transition-all cursor-pointer disabled:cursor-not-allowed"
             >
-              Next →
+              Selanjutnya →
             </button>
           </div>
         )}

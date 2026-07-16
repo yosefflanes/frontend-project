@@ -110,7 +110,7 @@ const Navbar = () => {
               backgroundColor: "var(--color-primary)",
             }}
           >
-            Logout
+            Keluar
           </Button>
         </Stack>
       ) : (
