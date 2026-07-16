@@ -80,14 +80,13 @@ const Login = () => {
 
             {/* Konten Utama Banner */}
             <div className="my-auto py-8 z-10">
-              <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-6">
-                Empowering the <br />
-                <span className="text-blue-200">Next Generation</span> of
-                Scholars.
+              <h1 className="text-2xl md:text-4xl font-extrabold leading-tight mb-6">
+                Selamat Datang Kembali di <br />
+                <span className="text-blue-200">EduPro</span>
               </h1>
               <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-sm">
-                Access your comprehensive digital learning environment and
-                manage your academic journey with precision.
+                Masuk untuk melanjutkan perjalanan belajarmu, mengakses materi
+                kelas, dan memantau perkembangan akademikmu di satu tempat.
               </p>
             </div>
 
@@ -95,7 +94,7 @@ const Login = () => {
             <div className="flex items-center gap-3 z-10">
               <div className="w-8 h-0.75 bg-indigo-500"></div>
               <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
-                Academic Excellence
+                EduPro Academic
               </span>
             </div>
           </div>
@@ -111,10 +110,10 @@ const Login = () => {
 
               {/* Greeting */}
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                Welcome Back
+                Yuk, Masuk Lagi!
               </h2>
               <p className="text-sm text-gray-500 mb-8">
-                Please enter your credentials to access your dashboard.
+                Silakan masuk ke akun Anda untuk mengakses dashboard.
               </p>
 
               {/* Form Input */}
@@ -122,7 +121,7 @@ const Login = () => {
                 {/* Email Field */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Email Address
+                    Email
                   </label>
                   <div>
                     <div className="flex items-center pointer-events-none text-gray-400"></div>
@@ -147,7 +146,7 @@ const Login = () => {
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
                     <label className="block text-sm font-medium text-gray-700">
-                      Password
+                      Kata Sandi
                     </label>
                   </div>
                   <div>
@@ -173,18 +172,18 @@ const Login = () => {
                   type="submit"
                   className="w-full bg-[#1A365D] text-white py-3 px-4 rounded-xl font-medium text-sm flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-[0.99] transition-all shadow-md shadow-blue-900/10 mt-2 hover:cursor-pointer"
                 >
-                  {submitting ? "Please wait" : "Login"}
+                  {submitting ? "Memuat..." : "Masuk"}
                 </button>
               </form>
 
               {/* Link Registrasi Bawah */}
               <p className="text-center text-xs sm:text-sm text-gray-500 mt-8">
-                New to the platform?{" "}
+                Belum punya akun ?{" "}
                 <Link
                   to="/register"
                   className="font-semibold text-indigo-600 hover:text-blue-600 hover:underline"
                 >
-                  Request an Account
+                  Daftar Akun
                 </Link>
               </p>
             </div>

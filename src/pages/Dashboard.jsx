@@ -10,8 +10,9 @@ const Dashboard = () => {
         <div className="text-center max-w-3xl mx-auto mt-20">
           <h1 className="text-primary text-3xl font-bold">Dashboard</h1>
           <p className="text-secondary text-sm">
-            Welcome back to your central learning hub. Manage your progress,
-            access your courses, and continue your academic journey.
+            Selamat datang kembali di pusat pembelajaran Anda. Kelola kemajuan
+            belajar Anda, akses kursus-kursus Anda, dan lanjutkan perjalanan
+            akademik Anda.
           </p>
         </div>
         <div className="text-center max-w-130 md:max-w-3xl mx-auto mt-10 flex flex-col gap-6 border border-gray-300 rounded-xl p-6 shadow-xl mb-18">
@@ -20,12 +21,13 @@ const Dashboard = () => {
             size={36}
           />
           <h2 className="text-primary text-2xl font-bold">
-            Welcome to Your Dashboard
+            Selamat Datang di Dashboard Anda
           </h2>
           <p className="text-secondary text-sm">
-            Your academic precision starts here. You have no pending
-            notifications or urgent tasks. Start by exploring the course catalog
-            or resume where you left off.
+            Ketelitian akademis Anda dimulai di sini. Anda tidak memiliki
+            pemberitahuan yang tertunda atau tugas mendesak. Mulailah dengan
+            menjelajahi katalog mata kuliah atau lanjutkan dari bagian terakhir
+            yang Anda tinggalkan.
           </p>
           <Stack className="mx-auto">
             <Button
@@ -40,7 +42,7 @@ const Dashboard = () => {
                 backgroundColor: "var(--color-primary)",
               }}
             >
-              View Users
+              Lihat Daftar Pengguna
             </Button>
           </Stack>
         </div>
