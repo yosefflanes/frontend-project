@@ -4,9 +4,11 @@ import AboutSection from "../components/AboutSection";
 import CallToAction from "../components/CallToAction";
 import {Button} from '@mui/material'
 import Stack from '@mui/material/Stack';
-
+import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
+  const {isLoggedIn} = useAuth();
+
   return (
     <main className="w-full flex flex-col gap-6 mt-18 mb-10">
       <section id="hero-section">
@@ -40,7 +42,7 @@ const Home = () => {
       </Stack>
       <StatSection />
       <AboutSection />
-      <CallToAction />
+      {!isLoggedIn && <CallToAction />}
     </main>
   );
 };

@@ -1,9 +1,13 @@
+// ==============================
+// Untuk menampilkan Rating Class
+// ==============================
+
 const Badge = ({children, variant = "default", className = ""}) => {
     const variants = {
-        default: "bg-secondary/5 text-secondary",
-        success: "bg-accent-btn text-white font-bold",
-        purple: "bg-accent-purple text-white font-bold",
-        subtitle: "bg-subtitle/10 text-subtitle",
+        default: "bg-secondary/5 text-secondary border border-gray-500", // Warna untuk kategori
+        success: "bg-accent-btn text-white font-bold", // Warna untuk Top Rated
+        purple: "bg-accent-purple text-white font-bold", // Warna untuk Recommended
+        subtitle: "bg-subtitle text-white", // Warna untuk Regular
     };
 
     return (

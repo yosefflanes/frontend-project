@@ -20,7 +20,7 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  if(location.pathname === "/login" || location.pathname === "/register") {
+  if (location.pathname === "/login" || location.pathname === "/register") {
     return null;
   }
 
@@ -28,17 +28,17 @@ const Navbar = () => {
     <nav className="w-full h-16 px-10 shadow-md z-50 bg-white fixed top-0 backdrop:blur-md flex items-center justify-between">
       <div>
         <Link to="/">
-          <h2 className="font-bold text-xl">EduPro</h2>
+          <h2 className="font-bold text-xl text-primary">EduPro</h2>
         </Link>
       </div>
       <div className="hidden gap-8 md:flex h-full items-center">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `h-full flex items-center border-b-2 transition-colors duration-200 ${
+            `h-full flex items-center transition-colors duration-200 ${
               isActive
-                ? "border-primary text-primary font-semibold" // Style saat menu AKTIF
-                : "border-transparent text-black hover:text-primary" // Style saat menu TIDAK AKTIF
+                ? " text-primary font-semibold" // Style saat menu AKTIF
+                : " text-black hover:text-blue-700" // Style saat menu TIDAK AKTIF
             }`
           }
         >
@@ -50,10 +50,8 @@ const Navbar = () => {
           <NavLink
             to="/dashboard"
             className={({ isActive }) =>
-              `h-full flex items-center border-b-2 transition-colors duration-200 ${
-                isActive
-                  ? "border-primary text-black font-semibold"
-                  : "border-transparent text-black hover:text-primary"
+              `h-full flex items-center transition-colors duration-200 text-primary ${
+                isActive ? " font-semibold" : " hover:text-blue-700"
               }`
             }
           >
@@ -66,10 +64,8 @@ const Navbar = () => {
           <NavLink
             to="/courses"
             className={({ isActive }) =>
-              `h-full flex items-center border-b-2 transition-colors duration-200 ${
-                isActive
-                  ? "border-primary text-black font-semibold"
-                  : "border-transparent text-black hover:text-primary"
+              `h-full flex items-center transition-colors duration-200 text-primary ${
+                isActive ? "font-semibold" : "hover:text-blue-700"
               }`
             }
           >
@@ -82,10 +78,8 @@ const Navbar = () => {
           <NavLink
             to="/users"
             className={({ isActive }) =>
-              `h-full flex items-center border-b-2 transition-colors duration-200 ${
-                isActive
-                  ? "border-primary text-black font-semibold"
-                  : "border-transparent text-black hover:text-primary"
+              `h-full flex items-center transition-colors duration-200 text-primary ${
+                isActive ? "font-semibold" : "hover:text-blue-700"
               }`
             }
           >
@@ -138,7 +132,7 @@ const Navbar = () => {
             sx={{
               color: "black",
               fontSize: "14px",
-              textDecoration:"none",
+              textDecoration: "none",
               fontFamily: '"Poppins", sans-serif',
               "&:hover": {
                 borderRadius: "8px",

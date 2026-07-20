@@ -10,10 +10,10 @@ const CourseCard = ({ item }) => {
   };
 
   return (
-    <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
+    <div className="bg-white border border-black/50 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
       <div>
-        {/* Thumbnail Area */}
-        <div className="w-full h-40 bg-secondary/10 flex items-center justify-center text-secondary font-bold text-sm relative">
+        {/* Thumbnail Area */}  
+        <div className="w-full h-40 bg-primary/90 flex items-center justify-center text-white font-bold text-sm relative">
           <span>{item.thumbnail || "No Image"}</span>
           <Badge
             variant={getRatingVariant(item.rating_class)}

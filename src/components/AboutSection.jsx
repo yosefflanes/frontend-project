@@ -18,7 +18,7 @@ const AboutSection = () => {
       desc: "Setiap kursus yang Anda selesaikan dilengkapi dengan sertifikat digital yang dapat diverifikasi oleh institusi di seluruh dunia.",
       image: sertifikasiImg,
       className:
-        "col-span-12 md:col-span-8 bg-white border border-gray-100 shadow-xs",
+        "col-span-12 md:col-span-8 bg-white border border-black/20 shadow-xs",
       iconBg: "bg-[rgba(0,32,73,0.08)] text-primary",
       titleColor: "text-primary",
       descColor: "text-secondary",
@@ -38,7 +38,7 @@ const AboutSection = () => {
       icon: <FiUsers />,
       subtitle: "Community Support",
       desc: "Forum diskusi aktif bersama mentor dan sesama pelajar untuk memecahkan hambatan belajar bersama.",
-      className: "col-span-12 md:col-span-4 bg-[rgba(134,160,205,0.18)]",
+      className: "col-span-12 md:col-span-4 bg-[rgba(134,160,205,0.18)] border border-black/20",
       iconBg: "bg-white text-primary shadow-xs",
       titleColor: "text-primary",
       descColor: "text-secondary",
@@ -50,7 +50,7 @@ const AboutSection = () => {
       desc: "Lanjutkan belajar Anda di mana saja. Aplikasi mobile kami mendukung akses offline untuk materi video dan teks.",
       image: multiplatformImg,
       className:
-        "col-span-12 md:col-span-8 bg-white border border-gray-100 shadow-xs",
+        "col-span-12 md:col-span-8 bg-white border border-black/20 shadow-xs",
       iconBg: "bg-purple-50 text-purple-600",
       titleColor: "text-primary",
       descColor: "text-secondary",

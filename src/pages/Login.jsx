@@ -93,8 +93,8 @@ const Login = () => {
             {/* Footer Banner */}
             <div className="flex items-center gap-3 z-10">
               <div className="w-8 h-0.75 bg-indigo-500"></div>
-              <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
-                EduPro Academic
+              <span className="text-xs tracking-widest text-gray-400 font-semibold">
+                AKADEMIK EDUPRO
               </span>
             </div>
           </div>

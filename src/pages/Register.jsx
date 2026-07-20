@@ -213,7 +213,7 @@ const Register = () => {
                       name="name"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Your name"
+                      placeholder="Masukkan Nama Lengkap"
                       className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${validationErrorsState.name ? "border-red-500" : ""}`}
                     />
                   </div>
@@ -236,7 +236,7 @@ const Register = () => {
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="example@mail.com"
+                      placeholder="contoh@mail.com"
                       className={`w-full bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-400 ${validationErrorsState.email ? "border-red-500" : ""}`}
                     />
                   </div>

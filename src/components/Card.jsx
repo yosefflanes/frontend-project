@@ -13,7 +13,7 @@ const Card = ({
   return (
     <div
       className={`p-8 flex flex-col md:flex-row ${
-        reverse ? "md:flex-row-reverse" : ""
+        reverse ? "md:flex-row-reverse " : ""
       } items-center justify-between rounded-2xl gap-6 transition-all duration-300 ${className}`}
     >
       {/* Sisi Konten Teks */}
@@ -31,7 +31,7 @@ const Card = ({
             <h3
               className={`font-bold text-xl md:text-xl tracking-tight ${titleColor}`}
             >
-              {subtitle}
+              {subtitle}  
             </h3>
           )}
           {desc && (

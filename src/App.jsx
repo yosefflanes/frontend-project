@@ -12,7 +12,7 @@ import FooterSection from "./components/FooterSection";
 import Course from "./pages/Courses";
 
 function App() {
-  const { loading } = useAuth();
+  const { loading, isLoggedIn } = useAuth();
 
   if (loading) {
     return (
@@ -34,52 +34,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/courses"
-          element={
-            <ProtectedRoute>
-              <Course />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/courses/:id"
-          element={
-            <ProtectedRoute>
-              <Course />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/users"
-          element={
-            <ProtectedRoute>
-              <Users />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/users/:id"
-          element={
-            <ProtectedRoute>
-              <UserDetail />
-            </ProtectedRoute>
-          }
-        />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/courses" element={<Course />} />
+          <Route path="/courses/:id" element={<Course />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<UserDetail />} />
+        </Route>
       </Routes>
-      <FooterSection />
+      {!isLoggedIn && <FooterSection />}
     </>
   );
 }
