@@ -187,8 +187,7 @@ const Login = () => {
                 </Link>
               </p>
             </div>
-          </div>{" "}
-          {/* PERBAIKAN: Menyeimbangkan penutup div grid kanan */}
+          </div>
         </div>
       </div>
     </div>
