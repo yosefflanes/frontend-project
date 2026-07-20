@@ -38,7 +38,7 @@ const Navbar = () => {
             `h-full flex items-center transition-colors duration-200 ${
               isActive
                 ? " text-primary font-semibold" // Style saat menu AKTIF
-                : " text-black hover:text-blue-700" // Style saat menu TIDAK AKTIF
+                : " text-primary hover:text-blue-700" // Style saat menu TIDAK AKTIF
             }`
           }
         >
